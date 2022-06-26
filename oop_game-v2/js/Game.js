@@ -18,4 +18,11 @@ class Game {
             const randomPhrase = Math.floor(Math.random() * this.phrases.length);
             return this.phrases[randomPhrase]; 
         }
+        startGame(phrase) {
+            const startScreenOverlay = document.getElementById("overlay");
+            startScreenOverlay.style.display = 'none';
+            this.activePhrase = this.getRandomPhrase();
+            return this.activePhrase.addPhraseToDisplay();
+            
+        }
     }
