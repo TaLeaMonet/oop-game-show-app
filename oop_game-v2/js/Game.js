@@ -48,6 +48,7 @@ class Game {
             
         
         }
+        //Why is it only jumping to 'else' condition when test argument is true?
         gameOver() {
             const screenOverlay = document.getElementById("overlay");
             screenOverlay.style.display = "";
