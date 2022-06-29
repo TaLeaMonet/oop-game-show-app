@@ -7,6 +7,8 @@ class Phrase {
     }
     addPhraseToDisplay() {
         const phraseArr = this.phrase.split("");
+        console.log(phraseArr.classList);
+       
         const phrase_ul = document.querySelector("ul");
         for(let i = 0; i < phraseArr.length; i++) {
             if(phraseArr[i] === " "){
@@ -21,5 +23,21 @@ class Phrase {
             }
         }
         return phrase_ul; 
+    }
+    checkLetter(letter) {
+        if(this.phrase.includes(letter)) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+    showMatchedLetter(letter) {
+        const phraseLetters = this.phrase.split("");
+        for(let i = 0; i < phraseLetters.length; i++) {
+            if(letter === phraseLetters[i]){
+                phraseLetters[i].classList.remove("hide");
+                phraseLetters[i].classList.add("show");
+            }
+        }
     }
 }
