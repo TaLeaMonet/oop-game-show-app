@@ -13,8 +13,8 @@ startButton.addEventListener("click", () => {
 
 function buttonClicked() {
     for(let i = 0; i < keys.length; i++) {
-        keys[i].addEventListener("click", () => {
-            const button = keys[i];
+        keys[i].addEventListener("click", (e) => {
+            const button = e.target;
             game.handleInteraction(button);
         })
     };

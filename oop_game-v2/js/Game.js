@@ -26,7 +26,7 @@ class Game {
             
         }
         checkForWin(letter) {
-            let phraseLetters = querySelecterAll(".hidden");
+            let phraseLetters = document.querySelectorAll(".hidden");
             if(phraseLetters.length === 0) {
                 return true; 
             } else {
@@ -47,24 +47,24 @@ class Game {
         handleInteraction(button) {
             console.log(button);
             button.disabled = true;
-          //Condtional only results in incorrect guesses even if letter is present. 
+          //Conditional only results in incorrect guesses even if letter is present. 
           //Adding the 'wrong' class name partially functions. It selected a different button rather than the button selected. 
         //Errors appear midway through game stating "can't set properties of undefined.";
-            if(!this.activePhrase.phrase.includes(button)) {
+            if(!this.activePhrase.phrase.includes(button.textContent)) {
                 console.log('Incorrect Guess');
                 button.className = 'wrong';
                 this.removeLife();
             } else {
                 console.log('Correct Guess');
                 button.className = 'chosen';
-                phrase.showMatchedLetter();
+                this.activePhrase.showMatchedLetter();
                 this.checkForWin()
                 if(this.checkForWin === true) {
                     this.gameOver();
                 } 
             } 
         }
-        //Why is it only jumping to 'else' condition when test argument is true?
+        //Conditional jumps to 'else' condition when test argument is true.
         gameOver() {
             const screenOverlay = document.getElementById("overlay");
             screenOverlay.style.display = "";
