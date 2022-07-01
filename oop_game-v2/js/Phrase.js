@@ -29,7 +29,7 @@ class Phrase {
             return false; 
         }
     }
-    //Fix the log to remove 'hide' className for 'show' className.
+    //Fix to remove 'hide' className for 'show' className.
     showMatchedLetter(letter) {
         const phraseLetters = this.phrase.split("");
         for(let i = 0; i < phraseLetters.length; i++) {

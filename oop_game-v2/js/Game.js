@@ -45,8 +45,24 @@ class Game {
 
         }
         handleInteraction(button) {
-            
-        
+            console.log(button);
+            button.disabled = true;
+          //Condtional only results in incorrect guesses even if letter is present. 
+          //Adding the 'wrong' class name partially functions. It selected a different button rather than the button selected. 
+        //Errors appear midway through game stating "can't set properties of undefined.";
+            if(!this.activePhrase.phrase.includes(button)) {
+                console.log('Incorrect Guess');
+                button.className = 'wrong';
+                this.removeLife();
+            } else {
+                console.log('Correct Guess');
+                button.className = 'chosen';
+                phrase.showMatchedLetter();
+                this.checkForWin()
+                if(this.checkForWin === true) {
+                    this.gameOver();
+                } 
+            } 
         }
         //Why is it only jumping to 'else' condition when test argument is true?
         gameOver() {
@@ -59,9 +75,7 @@ class Game {
                 screenOverlay.textContent = `Bummer, you didn't correctly figure out the phrase. Give it another shot!`;
                 screenOverlay.className = 'lose';
             }
-
         }
-    
 }
 
     

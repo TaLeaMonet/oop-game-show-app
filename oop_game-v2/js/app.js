@@ -10,12 +10,16 @@ startButton.addEventListener("click", () => {
     game.startGame();
 });
 
-for(let i = 0; i < keys.length; i++) {
-    keys[i].addEventListener("click", () => {
-        const button = keys[i];
-        game.handleInteraction(button);
-    })
-};
+
+function buttonClicked() {
+    for(let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", () => {
+            const button = keys[i];
+            game.handleInteraction(button);
+        })
+    };
+}
+buttonClicked();
 
 //Not sure if my logic is correct for this forEach method, but it doesn't work!
 // keys.forEach(key => {
