@@ -26,9 +26,9 @@ class Game {
             
         }
         checkForWin(letter) {
-            let phraseLetters = document.getElementsByClassName("hide letter");
-            console.log(phraseLetters);
-            if(phraseLetters.length === 0) {
+            let phraseLetters = document.getElementsByClassName("letter");
+            let shownLetters = document.getElementsByClassName("show");
+            if(shownLetters.length === phraseLetters.length) {
                 return true; 
             } else {
                 return false; 
@@ -59,17 +59,16 @@ class Game {
 
             } 
         }
-        //Conditional jumps to 'else' condition when test argument is true.
-        gameOver() {
+        gameOver(gameWon) {
             const screenOverlay = document.getElementById("overlay");
-            if(this.checkForWin === true) {
-                screenOverlay.style.display = "";
+            let gameOverMessage = document.getElementById('game-over-message');
+            screenOverlay.style.display = "";
+            if(gameWon) {
                 screenOverlay.className = 'win';
-                document.getElementById('game-over-message').innerHTML = `Great job, you've correctly figured out the phrase!`;
+               gameOverMessage.innerHTML = `Great job, you've correctly figured out the phrase!`;
             } else {
-                screenOverlay.style.display = "";
                 screenOverlay.className = 'lose';
-                document.getElementById('game-over-message').innerHTML = `Bummer, you didn't correctly figure out the phrase. Give it another shot!`;
+                gameOverMessage.innerHTML = `Bummer, you didn't correctly figure out the phrase. Give it another shot!`;
             }
         }
 }

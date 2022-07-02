@@ -10,7 +10,6 @@ startButton.addEventListener("click", () => {
     game.startGame();
 });
 
-
 function buttonClicked() {
     for(let i = 0; i < keys.length; i++) {
         keys[i].addEventListener("click", (e) => {
@@ -20,13 +19,6 @@ function buttonClicked() {
     };
 }
 buttonClicked();
-
-//Not sure if my logic is correct for this forEach method, but it doesn't work!
-// keys.forEach(key => {
-//     key.addEventListener("click", () => {
-//         console.log(key);
-//     })
-// });
 
 
 
