@@ -51,10 +51,10 @@ class Game {
                 this.removeLife();
             } else {
                 button.className = 'chosen';
-                this.activePhrase.showMatchedLetter();
+                this.activePhrase.showMatchedLetter(button.textContent);
                 this.checkForWin()
-                if(this.checkForWin === true) {
-                    this.gameOver();
+                if(this.checkForWin()) {
+                    this.gameOver(true) 
                 }
 
             } 
