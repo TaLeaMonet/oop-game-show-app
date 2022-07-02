@@ -26,7 +26,7 @@ class Game {
             
         }
         checkForWin(letter) {
-            let phraseLetters = document.querySelectorAll(".hidden");
+            let phraseLetters = document.getElementsByClassName("hide letter");
             console.log(phraseLetters);
             if(phraseLetters.length === 0) {
                 return true; 
@@ -36,7 +36,6 @@ class Game {
         }
         removeLife() {
             const heartsLeft = document.querySelectorAll('img');
-            console.log(heartsLeft);
             if(this.missed < 4) {
                 heartsLeft[this.missed].src = 'images/lostHeart.png';
                 this.missed += 1
@@ -46,7 +45,6 @@ class Game {
 
         }
         handleInteraction(button) {
-            console.log(button);
             button.disabled = true;
             if(!this.activePhrase.phrase.includes(button.textContent)) {
                 button.className = 'wrong';

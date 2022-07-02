@@ -29,7 +29,6 @@ class Phrase {
             return false; 
         }
     }
-    //Fix to remove 'hide' className for 'show' className.
     showMatchedLetter(letter) {
         const matchedLetters = document.getElementsByClassName("hide letter");
         for(let i = 0; i < matchedLetters.length; i++) {
