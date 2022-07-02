@@ -27,6 +27,7 @@ class Game {
         }
         checkForWin(letter) {
             let phraseLetters = document.querySelectorAll(".hidden");
+            console.log(phraseLetters);
             if(phraseLetters.length === 0) {
                 return true; 
             } else {
@@ -48,29 +49,29 @@ class Game {
             console.log(button);
             button.disabled = true;
             if(!this.activePhrase.phrase.includes(button.textContent)) {
-                console.log('Incorrect Guess');
                 button.className = 'wrong';
                 this.removeLife();
             } else {
-                console.log('Correct Guess');
                 button.className = 'chosen';
                 this.activePhrase.showMatchedLetter();
                 this.checkForWin()
                 if(this.checkForWin === true) {
                     this.gameOver();
-                } 
+                }
+
             } 
         }
         //Conditional jumps to 'else' condition when test argument is true.
         gameOver() {
             const screenOverlay = document.getElementById("overlay");
-            screenOverlay.style.display = "";
             if(this.checkForWin === true) {
-                screenOverlay.textContent = `Great job, you've correctly figured out the phrase!`;
+                screenOverlay.style.display = "";
                 screenOverlay.className = 'win';
+                document.getElementById('game-over-message').innerHTML = `Great job, you've correctly figured out the phrase!`;
             } else {
-                screenOverlay.textContent = `Bummer, you didn't correctly figure out the phrase. Give it another shot!`;
+                screenOverlay.style.display = "";
                 screenOverlay.className = 'lose';
+                document.getElementById('game-over-message').innerHTML = `Bummer, you didn't correctly figure out the phrase. Give it another shot!`;
             }
         }
 }

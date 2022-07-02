@@ -31,11 +31,10 @@ class Phrase {
     }
     //Fix to remove 'hide' className for 'show' className.
     showMatchedLetter(letter) {
-        const phraseLetters = this.phrase.split("");
-        for(let i = 0; i < phraseLetters.length; i++) {
-            if(letter === phraseLetters[i]){
-                phraseLetters[i].classList.remove("hide");
-                phraseLetters[i].classList.add("show");
+        const matchedLetters = document.getElementsByClassName("hide letter");
+        for(let i = 0; i < matchedLetters.length; i++) {
+            if(letter === matchedLetters[i].textContent){
+                matchedLetters[i].classList.add("show")
             }
         }
     }
