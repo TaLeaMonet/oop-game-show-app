@@ -7,11 +7,11 @@ class Game {
     constructor(){
             this.missed = 0; 
             this.phrases = [
-            new Phrase("Life is like a box of chocolates"),
-            new Phrase("A picture is worth a thousand words"), 
-            new Phrase("Absence makes the heart grow fonder"), 
-            new Phrase("God bless the child that has his own"), 
-            new Phrase("Love like there is no tomorrow")
+            new Phrase("Ignorance Is Bliss"),
+            new Phrase("Wild Wild West"), 
+            new Phrase("Three Blind Mice"), 
+            new Phrase("God Bless You"), 
+            new Phrase("Of Mice And Men")
             ];
             this.activePhrase = null; 
         } 
